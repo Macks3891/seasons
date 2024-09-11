@@ -1,15 +1,41 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class seasons {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите номер месяца (от 1 до 12): ");
+        int monthNumber = scanner.nextInt();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        String season;
+
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                season = "зима";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = "весна";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = "лето";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = "осень";
+                break;
+            default:
+                season = "некорректный номер месяца";
+                break;
         }
+
+        System.out.println("Месяц номер " + monthNumber + " принадлежит к сезону " + season);
+
+        scanner.close();
     }
 }
